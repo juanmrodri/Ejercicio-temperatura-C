@@ -32,5 +32,14 @@ void imprimirArray(float pArrayUno[], int len);
  */
 void inicalizarArray(float pArrayUno[], int len, float valorIninial);
 
+/**
+ * @brief void cargarTemperaturaEnArray(int[], int)
+ * 		  carga el dia y la temperatura maxima registrada en la pos. correspondiente del array
+ *
+ * @param temperaturaPorDia esta es la direccion de memoria del array
+ * @param len es la cantidad de posiciones del array
+ */
+void cargarTemperaturaEnArray(float temperaturaPorDia[], int len);
+
 
 #endif /* UTN_BIBLIOTECA_ARRAYS_H_ */
