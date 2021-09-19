@@ -8,6 +8,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "utn_biblioteca_arrays.h"
+#include "utn_biblioteca.h"
 
 void imprimirArray(float pArrayUno[], int len) // como regla gral, esta bueno tener en cuenta que como parametro, paso cuanto mide el array
 {
@@ -26,7 +27,7 @@ void imprimirArray(float pArrayUno[], int len) // como regla gral, esta bueno te
 	}
 }
 
-void inicalizarArray(float pArrayUno[], int len, int valorIninial)
+void inicalizarArray(float pArrayUno[], int len, float valorIninial)
 {
 	int i;
 
@@ -41,4 +42,38 @@ void inicalizarArray(float pArrayUno[], int len, int valorIninial)
 		{
 			printf("No existe nada para imprimir");
 		}
+}
+
+void cargarTemperaturaEnArray(float temperaturaPorDia[], int len)
+{
+	int dia; // el dia ingresado por el usuario
+	float temp;
+	int result;
+	int posicion;
+
+	// 1) pedir al usuario el dia
+	result = pedirIntAUsuario(&dia, 1, 31, 2, "Por favor ingrese el dia a registrar: ", "Se produjo un error\n");
+	if(result==0)
+		{
+			printf("Todo ok!\n");
+		}
+		else
+			{
+				printf("No se pudo registrar la temperatura\n");
+			}
+	// 2) pedir al usuario la temperatura
+	result = pedirFloatAUsuario(&temp, -10.00, 45.00, 2, "Por favor ingrese la temperatura registrada: ", "Se produjo un error\n");
+		if(result==0)
+			{
+				printf("Todo ok!\n");
+			}
+			else
+				{
+					printf("No se pudo registrar la temperatura\n");
+				}
+	// 3) transformar el dia en la posicion correcta
+	posicion = dia -1;
+
+	// 4) cargar la temperatura en la posicion del array
+	temperaturaPorDia[posicion]=temp;
 }

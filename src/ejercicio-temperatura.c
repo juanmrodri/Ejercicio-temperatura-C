@@ -26,61 +26,32 @@
 #include "utn_biblioteca_arrays.h"
 #define DIAS_LEN 31
 
-
 int main(void) {
 	setbuf(stdout, NULL);
-
 	int option;
-	int diaIngresado;
-	float temperaturaIngresada;
 	float temperaturaPorDia[DIAS_LEN];
-	int banderaPrimeraVuelta=0;
 	int result;
+
+	inicalizarArray(temperaturaPorDia, DIAS_LEN, 0.0);
 
 	do
 	{
-		if(banderaPrimeraVuelta==0)
-		{
-			banderaPrimeraVuelta=1;
-			inicalizarArray(temperaturaPorDia, DIAS_LEN, 0);
-		}
+
 		result= pedirIntAUsuario(&option, 1, 3, 0, "Elija una de estas opciones:\n1.Ingresar valores\n2.Imprimir valores\n3.Salir\n", "La opcion no es valida\n");
 		system("cls");
 		if(result==0)
 		{
 			if(option==1)
 					{
-						result = pedirIntAUsuario(&diaIngresado, 1, 31, 2, "Por favor ingrese el dia a registrar: ", "Se produjo un error\n");
-
-										if(result==0)
-												{
-													printf("Todo ok!\n");
-												}
-												else
-												{
-													printf("No se pudo registrar la temperatura\n");
-												}
-
-									result = pedirFloatAUsuario(&temperaturaIngresada, -10.00, 45.00, 2, "Por favor ingrese la temperatura registrada: ", "Se produjo un error\n");
-
-										if(result==0)
-												{
-													printf("Todo ok!\n");
-												}
-												else
-												{
-													printf("No se pudo registrar la temperatura\n");
-												}
-
-										temperaturaPorDia[diaIngresado-1] = temperaturaIngresada; // -1 para que no deje la pos. 0 en 0.00
+						cargarTemperaturaEnArray(temperaturaPorDia,DIAS_LEN);
 					}
 			else
-			{
-				if(option==2)
 				{
-					imprimirArray(temperaturaPorDia, DIAS_LEN);
+					if(option==2)
+					{
+						imprimirArray(temperaturaPorDia, DIAS_LEN);
+					}
 				}
-			}
 		}
 		else
 		{
@@ -88,9 +59,10 @@ int main(void) {
 			printf("Tenga en cuenta las opciones\n\n");
 		}
 
-
 	}while(option!=3);
 
 	return EXIT_SUCCESS;
 }
+
+
 
