@@ -32,7 +32,7 @@ int main(void) {
 	float temperaturaPorDia[DIAS_LEN];
 	int result;
 
-	inicalizarArray(temperaturaPorDia, DIAS_LEN, 0.0);
+	inicializarArray(temperaturaPorDia, DIAS_LEN, 0.0);
 
 	do
 	{

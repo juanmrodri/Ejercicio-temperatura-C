@@ -30,7 +30,7 @@ void imprimirArray(float pArrayUno[], int len);
  * @param len es la cantidad de posiciones del array
  * @param valorIninial es el valor que tendra cada posicion del array
  */
-void inicalizarArray(float pArrayUno[], int len, float valorIninial);
+void inicializarArray(float pArrayUno[], int len, float valorIninial);
 
 /**
  * @brief void cargarTemperaturaEnArray(int[], int)
