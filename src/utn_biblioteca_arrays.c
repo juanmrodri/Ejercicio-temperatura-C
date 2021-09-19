@@ -26,7 +26,7 @@ void imprimirArray(float pArrayUno[], int len) // como regla gral, esta bueno te
 	}
 }
 
-void inicalizarArray(int pArrayUno[], int len, int valorIninial)
+void inicalizarArray(float pArrayUno[], int len, int valorIninial)
 {
 	int i;
 

@@ -22,7 +22,7 @@ void imprimirArray(float pArrayUno[], int len);
 	/// @param pArrayUno esta es la direccion de memoria del array
 	/// @param len es la cantidad de posiciones del array
 	/// @param valorIninial es el valor que tendra cada posicion del array
-void inicalizarArray(int pArrayUno[], int len, int valorIninial);
+void inicalizarArray(float pArrayUno[], int len, int valorIninial);
 
 
 #endif /* UTN_BIBLIOTECA_ARRAYS_H_ */

@@ -34,10 +34,16 @@ int main(void) {
 	int diaIngresado;
 	float temperaturaIngresada;
 	float arrayDias[DIAS_LEN];
+	int banderaPrimeraVuelta=0;
 	int result;
 
 	do
 	{
+		if(banderaPrimeraVuelta==0)
+		{
+			banderaPrimeraVuelta=1;
+			inicalizarArray(arrayDias, DIAS_LEN, 0);
+		}
 		result= pedirIntAUsuario(&option, 1, 3, 0, "Elija una de estas opciones:\n1.Ingresar valores\n2.Imprimir valores\n3.Salir\n", "La opcion no es valida\n");
 		system("cls");
 		if(result==0)
@@ -67,7 +73,6 @@ int main(void) {
 												}
 
 										arrayDias[diaIngresado-1] = temperaturaIngresada; // -1 para que no deje la pos. 0 en 0.00
-										//inicalizarArray(arrayDias, diaIngresado-1, temperaturaIngresada);
 					}
 			else
 			{
