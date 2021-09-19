@@ -33,7 +33,7 @@ int main(void) {
 	int option;
 	int diaIngresado;
 	float temperaturaIngresada;
-	float arrayDias[DIAS_LEN];
+	float temperaturaPorDia[DIAS_LEN];
 	int banderaPrimeraVuelta=0;
 	int result;
 
@@ -42,7 +42,7 @@ int main(void) {
 		if(banderaPrimeraVuelta==0)
 		{
 			banderaPrimeraVuelta=1;
-			inicalizarArray(arrayDias, DIAS_LEN, 0);
+			inicalizarArray(temperaturaPorDia, DIAS_LEN, 0);
 		}
 		result= pedirIntAUsuario(&option, 1, 3, 0, "Elija una de estas opciones:\n1.Ingresar valores\n2.Imprimir valores\n3.Salir\n", "La opcion no es valida\n");
 		system("cls");
@@ -72,13 +72,13 @@ int main(void) {
 													printf("No se pudo registrar la temperatura\n");
 												}
 
-										arrayDias[diaIngresado-1] = temperaturaIngresada; // -1 para que no deje la pos. 0 en 0.00
+										temperaturaPorDia[diaIngresado-1] = temperaturaIngresada; // -1 para que no deje la pos. 0 en 0.00
 					}
 			else
 			{
 				if(option==2)
 				{
-					imprimirArray(arrayDias, DIAS_LEN);
+					imprimirArray(temperaturaPorDia, DIAS_LEN);
 				}
 			}
 		}
